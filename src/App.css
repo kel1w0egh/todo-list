@@ -140,7 +140,8 @@ header {
 
 .btn-add,
 .btn-edit,
-.btn-cancel {
+.btn-cancel,
+.btn-delete {
   position: relative;
   background-color: transparent;
   border: none;
@@ -209,6 +210,18 @@ header {
   transition: all 0.1s ease-in;
 }
 
+.btn-delete span {
+  position: absolute;
+  bottom: -22px;
+  left: 0;
+  cursor: pointer;
+  background-image: url('images/delete.svg');
+  height: 25px;
+  width: 25px;
+  background-repeat: no-repeat;
+  transition: all 0.1s ease-in;
+}
+
 .btn-add span:hover {
 
 }
@@ -219,4 +232,85 @@ header {
 
 .active {
   display: block;
+}
+
+.complete-todo {
+  background-color: rgba(39, 248, 39, 0.5);
+}
+
+.todo-list-container {
+  border: 1px solid black;
+  margin-top: 20px;
+  border-bottom: none;
+}
+
+.todo-list-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.body-add-container {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 30px;
+  padding: 10px 20px;
+}
+
+.body-todos-container {
+  border-top: 1px solid black;
+}
+
+.body-todos-container ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.body-todos-container ul li {
+  border-bottom: 1px solid black;
+}
+
+.body-todos-container ul li div {
+  padding: 10px 20px;
+}
+
+.body-todos-container ul div:last-child {
+  display: flex;
+  column-gap: 15px;
+}
+
+.body-todos-container ul div:last-child button {
+  padding: 10px 15px;
+}
+
+/* Modal */
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+}
+
+.modal.active {
+  transform: scale(1);
+}
+
+.modal-content {
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
