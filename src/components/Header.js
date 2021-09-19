@@ -2,6 +2,7 @@ import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import '../App.css';
 import Index from "./Index";
 import TodoList from "./TodoList";
+import TodoProject from "./TodoProject";
 
 export default function Header(props) {
     return (
@@ -30,7 +31,7 @@ export default function Header(props) {
                     <TodoList />
                 </Route>
                 <Route path={"/todo-projects"}>
-                    <h1>Проекты дел</h1>
+                    <TodoProject/>
                 </Route>
             </Switch>
         </Router>

@@ -28,14 +28,32 @@ export default function TodoList(props) {
 
     function addTodoToList(e) {
         const select = document.querySelector('.todos-for-list');
-        const todo = JSON.parse(localStorage.getItem('test')).filter(value => {
-            if (select.value == value.id) {
-                return value;
-            }
-        })[0];
-        // select.options[select.selectedIndex].style.display = 'none'
-        setTodos([...todos, {id: todo.id, title: todo.title, description: todo.description, date: todo.date, priority: todo.priority, tag: todo.tag, status: 'Выполняется'}]);
-        localStorage.setItem('test3', JSON.stringify([...todos, {id: todo.id, title: todo.title, description: todo.description, date: todo.date, priority: todo.priority, tag: todo.tag, status: 'Выполняется'}]))
+        if (select.value >= 0) {
+            const todo = JSON.parse(localStorage.getItem('test')).filter(value => {
+                if (select.value == value.id) {
+                    return value;
+                }
+            })[0];
+            // select.options[select.selectedIndex].style.display = 'none'
+            setTodos([...todos, {
+                id: todo.id,
+                title: todo.title,
+                description: todo.description,
+                date: todo.date,
+                priority: todo.priority,
+                tag: todo.tag,
+                status: 'Выполняется'
+            }]);
+            localStorage.setItem('test3', JSON.stringify([...todos, {
+                id: todo.id,
+                title: todo.title,
+                description: todo.description,
+                date: todo.date,
+                priority: todo.priority,
+                tag: todo.tag,
+                status: 'Выполняется'
+            }]))
+        }
     }
 
     function completeTodo(e, id) {
